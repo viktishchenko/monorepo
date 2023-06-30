@@ -131,10 +131,13 @@ npx nx generate @nx/angular:library --name=visitor --no-interactive
 nx console → g → @nx/angular → library → name: visitor
 ```
 
-- add component
+- add component & Andualr Material
 
 ```js
-ng add @angular/material --theme=deeppurple-amber --typography=true --animations=true
+
+npm install --save @angular/material
+
+npx nx g @angular/material:ng-add --project=tour --theme=deeppurple-amber --typography=true --animations=true
 ```
 
 </details>
