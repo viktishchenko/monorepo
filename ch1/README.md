@@ -183,7 +183,7 @@ export class VisitorModule {}
 
 <details>
 
-<summary>ep.2</summary>
+<summary>ep.3</summary>
 
 ## Building the administrator portal
 
@@ -219,5 +219,20 @@ import { RouterModule } from '@angular/router';
 ```
 
 ![Alt text](readmeAssets/init-admin.png)
+
+</details>
+
+<details>
+
+<summary>ep.4</summary>
+
+## Managing application state with NgRx
+
+```js
+// add ngrx
+npx nx generate @nx/angular:ngrx-root-store --project=tour --no-interactive --dry-run
+// or
+nx console → g → @nx/angular:ngrx-root-store → project: tour
+```
 
 </details>
