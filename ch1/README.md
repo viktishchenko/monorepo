@@ -108,10 +108,33 @@ git push -u origin master
   },
 
   // run
- npx nx run tour:serve
+  npx nx run tour:serve
   // or Nx Console menu → GENERATE & RUN TARGET pane → serve → tour
 ```
 
 ![Alt text](readmeAssets/init-monorepo.png)
+
+</details>
+
+<details>
+
+<summary>ep.2</summary>
+
+## Bulding the visitors app
+
+- init visitor app
+
+```js
+// add library
+npx nx generate @nx/angular:library --name=visitor --no-interactive
+// or
+nx console → g → @nx/angular → library → name: visitor
+```
+
+- add component
+
+```js
+ng add @angular/material --theme=deeppurple-amber --typography=true --animations=true
+```
 
 </details>
