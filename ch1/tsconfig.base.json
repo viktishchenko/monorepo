@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@monos/admin": ["libs/admin/src/index.ts"],
+      "@monos/poi": ["libs/poi/src/index.ts"],
       "@monos/visitor": ["libs/visitor/src/index.ts"]
     }
   },

@@ -62,6 +62,10 @@ Nx comes with local caching already built-in (check your `nx.json`). On CI you m
 
 ---
 
+npx @angular/cli@next new standalone-universal --standalone
+
+---
+
 <details>
 
 <summary>ep.1</summary>
@@ -234,5 +238,33 @@ npx nx generate @nx/angular:ngrx-root-store --project=tour --no-interactive --dr
 // or
 nx console → g → @nx/angular:ngrx-root-store → project: tour
 ```
+
+- create library in Nx monorepo that will fetch & store data feature state
+
+```js
+nx generate lib poi --dry-run // @nx/angular:library
+```
+
+![Alt text](readmeAssets/@nx-angular-lib.png)
+
+- add boilerplate code
+
+```js
+npx nx generate @nx/angular:ngrx-feature-store --name=poi --parent=libs/poi/src/lib/poi.module.ts --barrels=true --no-interactive
+// or
+nx console → g → @nx/angular:ngrx-feature-store → name:poi → parent:libs/poi/src/lib/poi.module.ts → barrels:re-export actions, state and selectors → directory:+state
+```
+
+// as prev command res
+
+/_
+• poi.actions.ts: Defines NgRx actions for the feature state
+• poi.effects.ts: Defines NgRx effects for the feature state
+• poi.models.ts: Defines an entity interface for POI data
+• poi.reducer.ts: Defines NgRx reducers for the feature state
+• poi.selectors.ts: Defines NgRx selectors for the feature state
+_/
+
+![Alt text](readmeAssets/@nx-ang-ngrx-feature-store.png)
 
 </details>
