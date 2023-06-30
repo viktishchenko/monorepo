@@ -134,10 +134,14 @@ nx console → g → @nx/angular → library → name: visitor
 - add component & Andualr Material
 
 ```js
-
+// add material
 npm install --save @angular/material
 
 npx nx g @angular/material:ng-add --project=tour --theme=deeppurple-amber --typography=true --animations=true
+
+ // add component w/o folder
+npx nx generate @angular/material:navigation --name=visitor --project=visitor --flat=true --path=libs/visitor/src/lib --no-interactive
+
 ```
 
 </details>
