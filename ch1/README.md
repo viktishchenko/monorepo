@@ -180,3 +180,44 @@ export class VisitorModule {}
 ![Alt text](readmeAssets/init-visitors.png)
 
 </details>
+
+<details>
+
+<summary>ep.2</summary>
+
+## Building the administrator portal
+
+- init admin app (library & component) w route
+
+```js
+// add library
+npx nx generate @nx/angular:library --name=admin --no-interactive --dry-run
+// or
+nx console → g → @nx/angular → library → name: admin
+```
+
+```js
+ // add component w/o folder
+npx nx generate @schematics/angular:component --name=admin --project=admin --no-interactive --dry-run
+// or
+nx console → g → @schematics/angular:component → name: admin → project: admin
+```
+
+```js
+// `app.module.ts`
+  {
+    path: 'admin',
+    loadChildren: () => import('@monos/admin').then((m) => m.AdminModule),
+  },
+
+// `a admin.module.ts`
+import { RouterModule } from '@angular/router';
+
+  RouterModule.forChild([
+  { path: '', component: AdminComponent }
+  ])
+```
+
+![Alt text](readmeAssets/init-admin.png)
+
+</details>

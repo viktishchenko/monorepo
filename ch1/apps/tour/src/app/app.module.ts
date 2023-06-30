@@ -12,6 +12,10 @@ import { NxWelcomeComponent } from './nx-welcome.component';
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {
+        path: 'admin',
+        loadChildren: () => import('@monos/admin').then((m) => m.AdminModule),
+      },
+      {
         path: 'tour',
         loadChildren: () =>
           import('@monos/visitor').then((m) => m.VisitorModule),

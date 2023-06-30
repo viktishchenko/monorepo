@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@monos/admin": ["libs/admin/src/index.ts"],
       "@monos/visitor": ["libs/visitor/src/index.ts"]
     }
   },
