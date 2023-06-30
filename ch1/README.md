@@ -120,7 +120,7 @@ git push -u origin master
 
 <summary>ep.2</summary>
 
-## Bulding the visitors app
+## Bulding the visitors portal
 
 - init visitor app
 
@@ -143,5 +143,40 @@ npx nx g @angular/material:ng-add --project=tour --theme=deeppurple-amber --typo
 npx nx generate @angular/material:navigation --name=visitor --project=visitor --flat=true --path=libs/visitor/src/lib --no-interactive
 
 ```
+
+- add router
+
+```js
+// `app.module.ts`
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot([
+      {
+        path: 'tour',
+        loadChildren: () => import('@monos/visitor').then((m) => m.VisitorModule),
+      },
+      { path: '', pathMatch: 'full', redirectTo: 'tour' },
+    ]),
+  ],
+})
+export class AppModule {}
+```
+
+```js
+// `visitor.module.ts`
+import { RouterModule } from '@angular/router';
+
+@NgModule({
+  imports: [RouterModule.forChild([{ path: '', component: VisitorComponent }])],
+})
+export class VisitorModule {}
+
+// run tour
+```
+
+![Alt text](readmeAssets/init-visitors.png)
 
 </details>
