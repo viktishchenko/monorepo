@@ -8,6 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
 import { RouterModule } from '@angular/router';
+import { PoiModule } from '@monos/poi';
+import { PoiListComponent } from './poi-list/poi-list.component';
 
 @NgModule({
   imports: [
@@ -18,7 +20,8 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatListModule,
     RouterModule.forChild([{ path: '', component: VisitorComponent }]),
+    PoiModule,
   ],
-  declarations: [VisitorComponent],
+  declarations: [VisitorComponent, PoiListComponent],
 })
 export class VisitorModule {}

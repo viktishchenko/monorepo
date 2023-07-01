@@ -293,3 +293,62 @@ export class PoiService {
 ```
 
 </details>
+
+<details>
+
+<summary>ep.5</summary>
+
+## Interacting with the store
+
+- display POI's data component
+
+`visitor.module.ts`
+
+```js
+import { PoiModule } from '@monos/poi';
+
+@NgModule({
+  imports: [
+    PoiModule,
+  ],
+})
+
+// generate  @nx/angular:component or @schematics/angular:component
+nx generate component poi-list --project=visitor --dry-run
+```
+
+![Alt text](readmeAssets/@nx-ang-component.png)
+
+_Dispatch the PoiActions.initPoi() action in the store to fetch POI data when the component is initialized_
+
+```js
+// `poi-list.component.ts`
+import { Component, OnInit } from '@angular/core';
+import { PoiActions } from '@monos/poi';
+import { Store } from '@ngrx/store';
+
+export class PoiListComponent implements OnInit {
+
+constructor(private store: Store){}
+
+  ngOnInit(): void {
+    this.store.dispatch(PoiActions.initPoi())
+  }
+}
+```
+
+```html
+// poi-list.component.html
+<mat-action-list *ngFor="let poi of pois$ | async">
+  <button mat-list-item>{{poi.name}}</button>
+</mat-action-list>
+
+// visitor.component.html
+<monos-poi-list></monos-poi-list>
+
+// run nx console → npx nx run tour:serve
+```
+
+![Alt text](readmeAssets/add-sidebar.png)
+
+</details>

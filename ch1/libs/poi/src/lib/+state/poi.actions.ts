@@ -10,5 +10,5 @@ export const loadPoiSuccess = createAction(
 
 export const loadPoiFailure = createAction(
   '[Poi/API] Load Poi Failure',
-  props<{ error: unknown }>()
+  props<{ error: any }>()
 );
