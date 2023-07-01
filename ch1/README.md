@@ -267,4 +267,29 @@ _/
 
 ![Alt text](readmeAssets/@nx-ang-ngrx-feature-store.png)
 
+```js
+// add service
+nx generate service poi --project=poi --dry-run
+
+// get data
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { PoiEntity } from './+state/poi.models';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class PoiService {
+  constructor(private http: HttpClient) {}
+
+  getAll(): Observable<PoiEntity[]> {
+    return this.http.get<PoiEntity[]>('assets/poi.json');
+  }
+}
+
+// test data → poi.json
+// + models/actions/effects
+```
+
 </details>

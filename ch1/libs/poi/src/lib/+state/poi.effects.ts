@@ -1,20 +1,31 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
-import { switchMap, catchError, of } from 'rxjs';
+import { fetch } from '@nrwl/angular';
+
 import * as PoiActions from './poi.actions';
-import * as PoiFeature from './poi.reducer';
+import { map } from 'rxjs/operators';
+import { PoiService } from '../poi.service';
 
 @Injectable()
 export class PoiEffects {
-  private actions$ = inject(Actions);
-
+  constructor(private actions$: Actions, private poiService: PoiService) {}
+  /* 
+effect responsible for listening actions that dispatched in store
+*/
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(PoiActions.initPoi),
-      switchMap(() => of(PoiActions.loadPoiSuccess({ poi: [] }))),
-      catchError((error) => {
-        console.error('Error', error);
-        return of(PoiActions.loadPoiFailure({ error }));
+      fetch({
+        run: (action) => {
+          return this.poiService
+            .getAll()
+            .pipe(map((pois) => PoiActions.loadPoiSuccess({ poi: pois })));
+        },
+
+        onError: (action, error) => {
+          console.error('Error', error);
+          return PoiActions.loadPoiFailure({ error });
+        },
       })
     )
   );
