@@ -351,4 +351,16 @@ constructor(private store: Store){}
 
 ![Alt text](readmeAssets/add-sidebar.png)
 
+- Angular Material contains a component for Google Maps
+
+```js
+npm install @angular/google-maps
+
+// add script index.html
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+
+// add component (@nx/angular:component)
+nx g c map --project=visitor --dry-run
+```
+
 </details>
