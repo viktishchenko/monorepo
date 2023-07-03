@@ -357,10 +357,43 @@ constructor(private store: Store){}
 npm install @angular/google-maps
 
 // add script index.html
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<scrip src="https://maps.googleapis.com/maps/api/js"></script>
 
 // add component (@nx/angular:component)
 nx g c map --project=visitor --dry-run
 ```
 
 </details>
+
+---
+
+## 404
+
+_freaking Google Maps API YOUR_API_KEY_
+
+# Angular RxJs Patterns
+
+![Alt text](readmeAssets/patterns/rxjs-patterns.png)
+
+## declarative
+
+![Alt text](readmeAssets/patterns/declarative/0-classic-retrievind-data.png)
+![Alt text](readmeAssets/patterns/declarative/1-classic-retrievind-data.png)
+![Alt text](readmeAssets/patterns/declarative/2-classic-retrievind-data.png)
+![Alt text](readmeAssets/patterns/declarative/7-declarative-data-access-pattern.png)
+![Alt text](readmeAssets/patterns/declarative/3-classic-retrievind-data.png)
+![Alt text](readmeAssets/patterns/declarative/4-classic-retrievind-data.png)
+![Alt text](readmeAssets/patterns/declarative/5-declarative-data-access-pattern.png)
+![Alt text](readmeAssets/patterns/declarative/6-declarative-data-access-pattern.png)
+
+## retrive
+
+![Alt text](readmeAssets/patterns/retrive/0-retrive-init.png) ![Alt text](readmeAssets/patterns/retrive/1-problem-solve.png) ![Alt text](readmeAssets/patterns/retrive/1-problem.png) ![Alt text](readmeAssets/patterns/retrive/2-subject.png) ![Alt text](readmeAssets/patterns/retrive/3-subject-emit.png) ![Alt text](readmeAssets/patterns/retrive/4-double-observable-yepp.png) ![Alt text](readmeAssets/patterns/retrive/4-double-observable.png) ![Alt text](readmeAssets/patterns/retrive/5-double-observable-yepp-how.png) ![Alt text](readmeAssets/patterns/retrive/6-double-observable-yepp-how-what.png) ![Alt text](readmeAssets/patterns/retrive/7-high-order-map.png) ![Alt text](readmeAssets/patterns/retrive/8-retrive-pattern-switchMap.png) ![Alt text](readmeAssets/patterns/retrive/8-retrive-pattern.png) ![Alt text](readmeAssets/patterns/retrive/9-retrive-action-pattern.png) ![Alt text](readmeAssets/patterns/retrive/10-retrive-action-pattern-why.png)
+
+## retrive-related
+
+![Alt text](readmeAssets/patterns/retrive-related/2-retrive-relateddata-pattern.png) ![Alt text](readmeAssets/patterns/retrive-related/0-retrive-relateddata-pattern-one.png) ![Alt text](readmeAssets/patterns/retrive-related/1-retrive-relateddata-pattern-many.png) ![Alt text](readmeAssets/patterns/retrive-related/1-retrive-relateddata-pattern-manybest.png)
+
+## shape
+
+![Alt text](readmeAssets/patterns/shape/0-shape-action.png) ![Alt text](readmeAssets/patterns/shape/1-shape-action.png) ![Alt text](readmeAssets/patterns/shape/2-shape-action.png) ![Alt text](readmeAssets/patterns/shape/3-shape-action-combination-op.png) ![Alt text](readmeAssets/patterns/shape/4-shape-on-action-pattern-table.png) ![Alt text](readmeAssets/patterns/shape/4-shape-on-action-pattern.png)
